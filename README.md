@@ -3,6 +3,7 @@ Implement a two-level (L1 and L2) cache simulator in C++. The cache simulator wi
 
 
 Cache Design
+
 ● Read Miss: on a read miss, the cache issues a read request for the data from the lower level of the cache. Once the data is returned, it is placed in an empty way, if one exists, or data in one of the ways is evicted to create room for the new data.
   ○ The ways of the cache are numbered from {0,1, 2, ..., W-1} for a W-way cache. If an empty way exists, data is placed in lowest numbered empty way.
   ○ Eviction is performed based on a round-robin policy. Each way has a counter that is initialized to 0, counts to W-1 and loops back to zero. The current value of the counter indicates the Way from which data is to be evicted. The counter is incremented by 1 after an eviction.
